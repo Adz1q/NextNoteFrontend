@@ -54,7 +54,7 @@ export default NextAuth({
         },
     },
     pages: {
-        signIn: "/login",
+        signIn: "/(auth)/login",
         error: "/",
     },
 });
