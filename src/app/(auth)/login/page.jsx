@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useFormState } from 'react-dom';
+import { useRouter } from "next/navigation";
 
 const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [state, formSubmit] = useFormState(handleSubmit, undefined);
+
+    const router = useRouter();
 
     async function handleSubmit(previousState, event) {
         event.preventDefault();
@@ -23,6 +26,8 @@ const Login = () => {
             if(!result || !result.ok) {
                 throw { error: "Invalid username or password"};
             }
+
+            router.push("/");
         }
         catch (error) {
             return error;

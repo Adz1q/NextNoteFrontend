@@ -1,11 +1,18 @@
 import "./globals.css";
+import SessionWrapper from "@/components/sessionWrapper/SessionWrapper";
+import Navigation from "@/components/navigation/Navigation";
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+
+    return (
+      <SessionWrapper>
+          <html lang="en">
+              <body>
+                <Navigation>
+                    { children }
+                </Navigation>
+              </body>
+          </html>
+      </SessionWrapper>
   );
 }
