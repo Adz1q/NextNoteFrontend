@@ -2,7 +2,7 @@
 
 const Error = () => {
     return (
-        <div>Error</div>
+        <div className="text-black w-screen h-screen flex justify-center items-center text-4xl">Error</div>
     );
 }
 

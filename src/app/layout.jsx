@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@fontsource/roboto";
 import SessionWrapper from "@/components/sessionWrapper/SessionWrapper";
 import Navigation from "@/components/navigation/Navigation";
 
