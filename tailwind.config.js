@@ -17,7 +17,7 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-			  toHover: '#2e2e2e',
+			  toHover: '#323232',
 			borderColor: '#aba7a7',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
