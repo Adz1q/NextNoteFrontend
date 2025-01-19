@@ -34,7 +34,7 @@ const Notes = ({ username, accessToken }) => {
         if(username && accessToken) {
             getNotes();
         }
-    }, []);
+    });
 
     return (
         <div className="flex flex-col justify-center items-center gap-12 p-6">
