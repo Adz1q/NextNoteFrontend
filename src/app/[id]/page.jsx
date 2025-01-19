@@ -5,7 +5,10 @@ const Note = async ({ params }) => {
     const paramsId = parseInt(id, 10);
 
     const note = await getNote(paramsId);
-    console.log(note);
+
+    if (!note) {
+        return <div>Unable to fetch the note</div>;
+    }
 
     async function getNote(id) {
         try {
@@ -20,7 +23,6 @@ const Note = async ({ params }) => {
                 throw { error: "Cannot get note!" };
             }
 
-            console.log(result.json());
             return await result.json();
         }
         catch(error) {
@@ -29,7 +31,7 @@ const Note = async ({ params }) => {
     }
 
     return (
-        <SingleNote propsId={id} propsTitle={note.title} propsContent={note.content} propsUsername={note.username}/>
+        <SingleNote propsId={paramsId} propsTitle={note.title} propsContent={note.content} propsUsername={note.username}/>
     );
 };
 
