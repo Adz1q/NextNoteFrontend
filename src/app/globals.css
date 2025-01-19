@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    font-family: Apple;
+    font-family: 'Roboto', sans-serif;
 }
 
 @layer base {

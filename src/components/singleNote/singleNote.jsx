@@ -16,7 +16,7 @@ const SingleNote = ({ propsId, propsTitle, propsContent, propsUsername }) => {
     const router = useRouter();
 
     useEffect(() => {
-        if(!session?.username || session?.username !== propsUsername) {
+        if(!session?.username || (session?.username !== propsUsername)) {
             router.push("/");
         }
     });

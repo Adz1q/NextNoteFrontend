@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useFormState } from "react-dom";
 import { Button } from "@/components/ui/button";
-
+import { useRouter } from "next/navigation";
 
 const Home = () => {
 
@@ -15,6 +15,8 @@ const Home = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [state, formSubmit] = useFormState(handleSubmit, undefined);
+
+    const router = useRouter();
 
     async function handleSubmit(previousState, event) {
         event.preventDefault();
@@ -54,7 +56,7 @@ const Home = () => {
 
             setTitle(t => t = "");
             setContent(c => c = "");
-            throw { error: "Note created!" };
+            router.push("/");
         }
         catch (error) {
             return error;
